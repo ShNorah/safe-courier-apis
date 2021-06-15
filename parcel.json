@@ -1,9 +1,12 @@
 {
+    "parcelCreator":"userId",
+    "contact": "0787557340",
+    "email": "sharon@gmail.com",
     "parcelCode": "234",
-     "parcelWeight": 75,
-     "parcelDestination": "Gayaza",
-     "parcelStatus": "in transit",
-     "userId":""
+    "parcelWeight": 75,
+    "parcelDestination": "Gayaza",
+    "currentlocation": "kampala"
  }
+
  
  

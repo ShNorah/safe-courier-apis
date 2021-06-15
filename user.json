@@ -1,5 +1,6 @@
 {
-    "firstName": "sharon",
-    "lastName": "Norah",
-    "location": "Najera2"   
+    "userName": "sharon",
+    "email": "sharon@gmail.com", 
+    "contact": "0787557340",
+    "role": "admin"  
 }
