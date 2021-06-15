@@ -38,29 +38,41 @@ export const getParcels = (req, res)=>{
 export const updateParcel = (req,res)=>{
     const {id} = req.params;
   
-    const {parcelWeight, parcelCode, parcelDestination, parcelStatus, userId} = req.body;
+    const {
+      parcelWeight, 
+      parcelCode, 
+      currentlocation, 
+      parcelDestination, 
+      parcelCreator, 
+      contact, 
+      email
+    } = req.body;
   
     const parcel = parcels.find((parcel)=>parcel.id === id);
-  
+    if(parcelCreator)parcel.parcelCreator = parcelCreator;
+    if(contact)parcel.contact = contact;
+    if(email)parcel.email = email;
     if(parcelCode)parcel.parcelCode = parcelCode;
     if(parcelWeight) parcel.parcelWeight;
-    if(parcelStatus)parcel.parcelStatus = parcelStatus;
-    if(userId)parcel.userId = userId;
+    if(currentlocation)parcel.currentlocation = currentlocation;
     if(parcelDestination)parcel.parcelDestination = parcelDestination;
     
   
     res.send(`Parcel with id ${id} has been updted`) 
   
   }
-
+//getting parcesls of a particular
   export const getUserParcels = (req,res)=>{
     const userId = req.params;
 
     const userParcels = parcels.filter((parcel)=>parcel.userId==userId);
 
     if (userParcels){
+      console.log(userParcels);
       return (userParcels)
     }
     return('no parcels found')
 
   }
+
+  

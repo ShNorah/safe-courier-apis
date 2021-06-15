@@ -10,7 +10,7 @@ export const createUser = (req,res)=>{
     
     users.push({...user, id:uuidv4()}); //spread all the properties of user, add userid
   
-    res.send(`user ${user.firstName} added to the array`)
+    res.send(`user ${user.userName} added to the array`)
   }
 
   export const getUsers =(req, res)=>{
@@ -37,16 +37,16 @@ export const createUser = (req,res)=>{
   export const updateUser = (req,res)=>{
     const {id} = req.params;
   
-    const {firstName, lastName, location} = req.body;
+    const { userName, email, contact, role} = req.body;
   
     const user = users.find((user)=>user.id === id);
   
-    if(firstName)user.firstName = firstName;
-    if(lastName) user.lastName = lastName;
-    if(location)user.location = location;
+    if(userName)user.userName = userName;
+    if(email) user.email = email;
+    if(contact)user.contact = contact;
+    if(role)user.role = role;
   
     res.send(`User with id ${id} has been updted`) 
   
   }
 
- 
